@@ -15,24 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FirstComponent implements OnInit{
 
-  students = [
-    {
-      name:'Ahmed',
-      age: 22,
-    },
-    {
-      name:'Ali',
-      age: 24,
-    },
-    {
-      name:'Radouane',
-      age: 18,
-    },
-    {
-      name:'Samia',
-      age: 30,
-    },
-  ]
+  
   
 
   
