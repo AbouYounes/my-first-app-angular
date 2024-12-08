@@ -1,0 +1,10 @@
+<div *ngFor="let student of students" 
+    [ngClass]="
+    {
+        'bg-danger': student.age <20, 
+        'bg-success': student.age>=20
+    }
+    ">
+    <h1> {{ student.name }} </h1>
+    <p> {{ student.age }} </p>
+</div>
