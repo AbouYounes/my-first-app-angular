@@ -3,53 +3,43 @@
 
     <div class="row mt-5">
         <div class="col-3">
-            <input type="text" class="form-control m-1">
+            <input [(ngModel)]="hero.name" type="text" class="form-control m-1" placeholder="name">
         </div>
         <div class="col-3">
-            <input type="text" class="form-control m-1">
+            <input [(ngModel)]="hero.power" type="text" class="form-control m-1" placeholder="power">
         </div>
         <div class="col-3">
-            <input type="text" class="form-control m-1">
+            <input [(ngModel)]="hero.image" type="text" class="form-control m-1" placeholder="image url">
         </div>
         <div class="col-3">
-            <button class="btn form-control m-1">Create</button>
+            <button (click)="add()" class="btn form-control m-1">Create</button>
         </div>
     </div>
 
     <div class="row mt-5">
-        <div class="col-3">
-            <div class="card p-2">
+
+        <div class="col-3" *ngFor="let item of heros">
+
+            <div [ngClass]="{ 
+                                'card p-1':true,
+                                'hight':item.power>100,
+                                'medium':item.power<100 && item.power>50,
+                                'low':item.power<50,
+                            }">
+
                 <div class="card-image">
-                    <img class="w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDq4Kxmcz2JawUXloOSKYPY6OHKtRoKGm7CUeztqkJgOj5dEpujdIRL-IbHItqJpa381w&usqp=CAU" alt="">
+                    <img class="w-100" [src]="item.image" alt="">
                 </div>
+
                 <div class="card-body">
-                    <h2> Monkey d luffy </h2>
-                    <p> 22 </p>
+                    <h2> {{ item.name }} </h2>
+                    <p> {{ item.power }} </p>
                 </div>
+
             </div>
+
         </div>
-        <div class="col-3">
-            <div class="card p-2">
-                <div class="card-image">
-                    <img class="w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDq4Kxmcz2JawUXloOSKYPY6OHKtRoKGm7CUeztqkJgOj5dEpujdIRL-IbHItqJpa381w&usqp=CAU" alt="">
-                </div>
-                <div class="card-body">
-                    <h2> Monkey d luffy </h2>
-                    <p> 22 </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card p-2">
-                <div class="card-image">
-                    <img class="w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDq4Kxmcz2JawUXloOSKYPY6OHKtRoKGm7CUeztqkJgOj5dEpujdIRL-IbHItqJpa381w&usqp=CAU" alt="">
-                </div>
-                <div class="card-body">
-                    <h2> Monkey d luffy </h2>
-                    <p> 22 </p>
-                </div>
-            </div>
-        </div>
+    
     </div>
     
 </div>

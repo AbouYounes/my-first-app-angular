@@ -16,7 +16,24 @@ import { CommonModule } from '@angular/common';
 export class FirstComponent implements OnInit{
 
   
-  
+  hero = {
+    name: '',
+    power: 0,
+    image: '',    
+  }
+
+  heros:any[] = [];
+
+  add(){
+    this.heros.push(this.hero);
+    this.hero = {
+      name: '',
+      power: 0,
+      image: '', 
+    }
+
+    console.log(this.heros)
+  }
 
   
   constructor() { }
