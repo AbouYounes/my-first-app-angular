@@ -5,7 +5,21 @@ import { Injectable } from '@angular/core';
 })
 export class SharedService {
 
-  heros:any[] = [];
 
   constructor() { }
+
+  public heros:any[] = [];
+  public hero = {
+    name: '',
+    power: 0,
+    image: '',    
+  }
+
+  addHero(value: Object) {
+
+    this.heros.push(value)
+    
+  }
+
+
 }

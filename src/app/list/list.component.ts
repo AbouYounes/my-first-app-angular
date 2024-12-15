@@ -1,23 +1,20 @@
-import { Component, OnInit} from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [
-    FormsModule,
-    CommonModule,
-  ],
+  imports: [CommonModule],
   templateUrl: './list.component.html',
-  styleUrl: './list.component.css'
+  styleUrl: './list.component.css',
 })
+
 export class ListComponent {
 
   constructor(public _shared: SharedService) {
 
+    
   }
-
 
 }
