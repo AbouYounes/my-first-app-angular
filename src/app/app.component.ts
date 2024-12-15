@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FirstComponent } from "./first/first.component";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  //imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [FirstComponent]
+  imports: [RouterOutlet, NavbarComponent]
 })
 export class AppComponent {
   title = 'first-app';
